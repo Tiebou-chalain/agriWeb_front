@@ -1,0 +1,7 @@
+{
+  "name": "agriWeb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
