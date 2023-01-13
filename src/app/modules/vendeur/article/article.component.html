@@ -1,3 +1,226 @@
-<p>
-  article works!
-</p>
+<app-nav-bar></app-nav-bar>
+
+<ion-content class="ion-padding">
+  <!-- <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button> -->
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button id="open-modal" expand="block">
+          <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.85]">
+    <ng-template>
+      <ion-content>
+        <ion-grid >
+          <form>
+              <ion-row>
+                  <ion-col size="12">
+                      <div>
+                            <ion-img src="../../../../assets/images/articles/bananas-614090_640.jpg"></ion-img>
+                            <ion-fab  vertical="top" horizontal="end" slot="fixed">
+                                <ion-fab-button id="open-modal" expand="block">
+                                    <ion-icon name="add"></ion-icon>
+                                </ion-fab-button>
+                            </ion-fab>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col size="12">
+                      <div>
+                          <ion-label>Le nom de l'article</ion-label>
+                      </div>
+                      <div>
+                          <ion-input type="text" placeholder="Nom de l'article"></ion-input>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col size="12">
+                      <div>
+                          <ion-label>Description de l'article</ion-label>
+                      </div>
+                      <div>
+                          <ion-input type="text-area" placeholder="Nom de l'article"></ion-input>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                    <div>
+                        <ion-label>Prix unitaire</ion-label>
+                    </div>
+                    <div>
+                        <ion-input type="number" placeholder="prix unitaire"></ion-input>
+                    </div>
+                </ion-col>
+            </ion-row>
+              <ion-row>
+                  <ion-col size="12">
+                      <div>
+                          <ion-label>La quantité de l'article</ion-label>
+                      </div>
+                      <div class="counter__section">
+                        <ion-button *ngIf="!submitting" [disabled]="true" (click)="decrement()">-</ion-button>
+                        <ion-button *ngIf="submitting" [disabled]="false" (click)="decrement()">-</ion-button>
+                          <p>{{count }}</p>
+                          <ion-button (click)="increment()">+</ion-button>
+                        </div>
+                  </ion-col>
+              </ion-row>
+              <!-- <ion-row>
+                <ion-col size="12">
+                    <div>
+                        <ion-label>Currency</ion-label>
+                    </div>
+                </ion-col>
+            </ion-row> -->
+            <ion-row>
+                <ion-col size="12">
+                    <div>
+                        <ion-label>Statut</ion-label>
+                    </div>
+                    <div>
+                        <ion-row>
+                            <ion-col size="12">
+                                <ion-radio-group name="auto" value="disponible">
+                                    <ion-row>
+                                        <ion-col size="6">
+                                            <ion-item>
+                                                <ion-label>Disponible</ion-label>
+                                                <ion-radio color="success" value="disponible"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col size="6">
+                                            <ion-item>
+                                                <ion-label>Indisponible</ion-label>
+                                                <ion-radio color="danger" value="indisponible"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+                                    
+                                    
+                                </ion-radio-group>
+                                <ion-list>
+                                    
+                                </ion-list>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </ion-col>
+            </ion-row>
+          </form> 
+        </ion-grid>
+        <ion-grid fixed>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-button color="primary" expand="block"  shape="round">
+                        Save
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-list class="ios list-ios hydrated" inset>
+    <ion-item-sliding>
+        <ion-item >
+            <ion-img class="ion-img" src="../../../../assets/images/articles/bananas-614090_640.jpg"></ion-img>
+            <div>
+                <h5 color="primary">BANANE</h5>
+                <p>C'est un aliment riche en vitamines</p>
+            </div>
+            <hr>
+            <div class="right-element">
+                <ion-label >100</ion-label>
+                <ion-label>25</ion-label>
+                <ion-label color="success">Disponible</ion-label>
+            </div>
+            
+        </ion-item>
+        <ion-item-options side="end"  >
+            <ion-button color="success">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+                <ion-icon  slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+        <ion-item >
+          
+            <ion-img class="ion-img" src="../../../../assets/images/articles/bananas-614090_640.jpg"></ion-img>
+          
+          <div>
+            <h5 color="primary">BANANE</h5>
+            <p>C'est un aliment riche en vitamines</p>
+          </div>
+          <hr>
+          <div class="right-element">
+            <ion-label >100</ion-label>
+            <ion-label>25</ion-label>
+            <ion-label color="success">Disponible</ion-label>
+          </div>   
+        </ion-item>
+        <ion-item-options side="end"  >
+            <ion-button color="success">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+                <ion-icon  slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+        <ion-item >
+            <ion-img class="ion-img" src="../../../../assets/images/articles/bananas-614090_640.jpg"></ion-img>
+            <div>
+                <h5 color="primary">BANANE</h5>
+                <p>C'est un aliment riche en vitamines</p>
+            </div>
+            <hr>
+            <div class="right-element">
+                <ion-label >100</ion-label>
+                <ion-label>25</ion-label>
+                <ion-label color="success">Disponible</ion-label>
+            </div>
+            
+        </ion-item>
+        <ion-item-options side="end"  >
+            <ion-button color="success">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+                <ion-icon  slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+        </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+        <ion-item >
+            <ion-img class="ion-img" src="../../../../assets/images/articles/bananas-614090_640.jpg"></ion-img>
+            <div>
+                <h5 color="primary">BANANE</h5>
+                <p>C'est un aliment riche en vitamines</p>
+            </div>
+            <hr>
+            <div class="right-element">
+                <ion-label >100</ion-label>
+                <ion-label>25</ion-label>
+                <ion-label color="success">Disponible</ion-label>
+            </div>
+            
+        </ion-item>
+        <ion-item-options side="end"  >
+            <ion-button color="success">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+                <ion-icon  slot="icon-only" name="trash"></ion-icon>
+            </ion-button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>

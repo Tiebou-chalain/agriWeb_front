@@ -2,4 +2,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+ion-card-header{
+  padding: 0px;
+}
+ion-card-content{
+  padding: 0px;
+  ion-grid{
+    padding: 0px;
   }
+}
+div{
+
+  h4{
+    font-weight: 700;
+  }
+  p{
+
+  }
+}
+.block-sup{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  .title{
+
+  }
+  .block-content{
+    text-align: center;
+    border-radius: 45px;
+    background:#f5f5f5;
+    font-weight: 900;
+    color: #a0a0a0;
+    padding: 8px;
+  }
+}
